@@ -62,6 +62,14 @@ const App = () => {
             })
     }
 
+    const handleDeleteNote = id => {
+        noteService
+            .deleteNote(id)
+            .then(() => {
+                setNotes(notes.filter(note => note.id !== id))
+            })
+    }
+
     const handleNoteChange = (event) => {
         setNewNote(event.target.value)
     }
@@ -85,6 +93,7 @@ const App = () => {
                         key={note.id}
                         note={note}
                         toggleImportance={() => toggleImportanceOf(note.id)}
+                        handleDeleteNote={() => handleDeleteNote(note.id)}
                     />
                 )}
             </ul>
