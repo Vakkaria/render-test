@@ -2,10 +2,12 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "WebStorm is good in backend debugging",
+  "content": "Ensure that everything works right",
   "important": true
 }
 
 ###
 
-GET http://localhost:3001/info
+GET http://localhost:3001/api/notes
+
+###
