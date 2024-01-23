@@ -2,8 +2,20 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "Ensure that everything works right",
-  "important": true
+  "content": "User id of the note creator is at the start sent along the request",
+  "important": true,
+  "userId": "65afcd25fadae5930805b589"
+}
+
+###
+
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "content": "Note without userId",
+  "important": true,
+  "userId": ""
 }
 
 ###
@@ -11,3 +23,26 @@ Content-Type: application/json
 GET http://localhost:3001/api/notes
 
 ###
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "name": "Matti Luukkainen",
+  "password": "salainen"
+}
+
+###
+
+GET http://localhost:3001/api/users
+
+###
+
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "salainen"
+}
